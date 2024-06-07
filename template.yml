@@ -1,0 +1,25 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: >-
+  interview-backend-nodejs
+
+Transform:
+- AWS::Serverless-2016-10-31
+
+Resources:
+
+  CustomersLambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: dist/handlers/customers.customersHandler
+      Runtime: nodejs12.x
+      MemorySize: 128
+      Timeout: 100
+      Description: Customers
+      Events:
+        CustomerResource:
+          Type: Api
+          Properties:
+            Path: /customers
+            Method: GET
+
+Outputs:

@@ -1,0 +1,7 @@
+.aws-sam
+node_modules
+coverage
+.idea
+dist
+junit.xml
+package-lock.json
